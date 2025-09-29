@@ -1,0 +1,18 @@
+.categoryCards {
+    display: flex;
+    gap: 20px ;
+    overflow-x: scroll;
+    padding-bottom: 15px;
+}
+.categoryDescription{
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+}
+
+@media (min-width:1200px) {
+    .categoryCards{
+        overflow-x: auto;
+    }
+}

@@ -1,0 +1,5 @@
+.ratingsWrap{
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+}
