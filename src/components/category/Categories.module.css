@@ -10,9 +10,27 @@
     overflow: hidden;
     -webkit-box-orient: vertical;
 }
+.categoryWrap .categoryList:nth-child(even){
+    background-color: var(--white);
+}
+.categoryWrap .container .row{
+    padding-block: 40px ;
+}
+
+@media (min-width:992px) {
+    .categoryWrap .categoryList:nth-child(even) .row {
+        flex-direction: row-reverse;
+    }
+    .categoryList{
+        max-width: 95%;
+        margin-inline: auto;
+        border-radius: 45px;
+    }
+}
 
 @media (min-width:1200px) {
     .categoryCards{
         overflow-x: auto;
+        gap: 37px;
     }
 }

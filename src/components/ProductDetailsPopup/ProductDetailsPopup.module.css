@@ -1,8 +1,10 @@
 .modalBox{
     width: 700px;
+    position: relative;
 }
-.productPrice{
-    color: var(--green);
+.productPrice{    
     font-weight: 600;
     font-size: 20px;
+    display: block;
+    margin-bottom: 15px;
 }

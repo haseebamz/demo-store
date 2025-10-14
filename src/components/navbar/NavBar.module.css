@@ -1,0 +1,122 @@
+.siteHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background-color: var(--white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding-block: 5px;
+}
+.innerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navBrand {
+  max-width: 80px;
+  max-height: fit-content;
+}
+.navToggler span {
+  width: 20px;
+  height: 2px;
+  background-color: var(--black);
+  display: block;
+  transition: all 0.3s ease-in-out;
+}
+.navToggler span:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.siteHeader.activeHeader .navToggler span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+
+.siteHeader.activeHeader .navToggler span:nth-child(2) {
+  opacity: 0;
+}
+
+.siteHeader.activeHeader .navToggler span:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+
+.navList {
+  position: absolute;
+  left: -300px;
+  top: 50px;
+  background-color: var(--white);
+  width: 300px;
+  list-style: none;
+  transition: left 0.3s linear;
+  height: 100vh;
+  padding: 15px;
+  margin: 0;
+}
+.siteHeader.activeHeader .navList {
+  left: 0;
+}
+.cartIcon {
+  position: relative;
+}
+.cartIcon span {
+  position: absolute;
+  right: -9px;
+  top: -9px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  color: var(--white);
+  font-weight: 600;
+  line-height: 1;
+  padding: 2px 5px;
+  font-size: 14px;
+}
+.cartIcon {
+  cursor: pointer;
+}
+.userDropDown {
+  position: relative;
+  background: none;
+    border: none;
+}
+.userDropDown ul {
+  transform: scaleY(0);
+  position: absolute;
+  top: 27px;
+  right: 0;
+  background: var(--white);
+  transform-origin: 0 0;
+  transition: transform 0.3s ease;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.userDropDown.activeDropDown ul {
+  transform: scaleY(1);
+  /* transition: transform 0.3s ease;
+  transform-origin: 0 0; */
+}
+@media (min-width: 992px) {
+  .navRightWrapper {
+    width: 30%;
+  }
+  .navBrandWrapper {
+    width: 30%;
+  }
+  .navList {
+    position: unset;
+    display: flex;
+    height: fit-content;
+    gap: 20px;
+    width: 40%;
+    justify-content: center;
+  }
+  .navToggler {
+    display: none;
+  }
+  .navBrand {
+    max-width: 100px;
+  }
+  .cartIcon i {
+    font-size: 20px;
+  }
+}

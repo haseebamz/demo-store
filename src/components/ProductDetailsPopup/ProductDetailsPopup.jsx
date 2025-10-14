@@ -1,10 +1,14 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./ProductDetailsPopup.module.css";
 import Ratings from "../RatingStars/Ratings";
+import { handleAddToCart } from "../handleCart/handleAddToCart";
+import { DataContext } from "../../App";
 
 function ProductDetailsPopup({ onClose, product }) {
-  const [cartQuantity, setCartQuantity] = useState(1);
+
+  const {cartItems, setCartCount, setCartItems} = useContext(DataContext)
+
+
 
   return (
     <div className={styles.detailsPopup}>
@@ -18,23 +22,20 @@ function ProductDetailsPopup({ onClose, product }) {
             </div>
             <div className="col-6">
               <h2>{product.title}</h2>
-              {/* <p>{product.description}</p> */}
-              <div className="addToCartBox">
-                <span onClick={() => setCartQuantity((num) => num - 1)}  >-</span>
-                <span>{cartQuantity}</span>
-                <span onClick={() => setCartQuantity((num) => num + 1)} >+</span>
-              </div>
+
               <Ratings
                 rate={product.rating.rate}
                 count={product.rating.count}
               />
-              <span className={styles.productPrice}>$ {product.price}</span>
+            
+              <span className={styles.productPrice}>${product.price}</span>
+              <button className="CustomBtn" onClick={() => handleAddToCart(product, cartItems, setCartCount, setCartItems ) } >ADD TO CART</button>
             </div>
           </div>
+          <button className="closeModal" onClick={onClose}>
+            X
+          </button>
         </div>
-        <button className="closeModal" onClick={onClose}>
-          X
-        </button>
       </div>
     </div>
   );
