@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { DataContext } from "../../../../App";
+import { DataContext } from "../../../App";
 import styles from "./Cart.module.css";
 
 function Cart() {

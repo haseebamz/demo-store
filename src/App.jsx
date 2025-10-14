@@ -1,13 +1,13 @@
 import { Route, Routes } from "react-router";
 import "./App.css";
 import NavBar from "./components/navbar/navBar";
-import Cart from "./components/Pages/ProductDetailsPage/CartPage/Cart";
-import Home from "./components/Pages/ProductDetailsPage/Home/Home";
+import Cart from "./components/Pages/CartPage/Cart";
+import Home from "./components/Pages/Home/Home";
 import { createContext, useState } from "react";
-import Media from "./components/Pages/ProductDetailsPage/Media/Media";
-import ContactUs from "./components/Pages/ProductDetailsPage/ContactUs/ContactUs";
-import Login from "./components/Pages/ProductDetailsPage/Login/Login";
-import Dashboard from "./components/Pages/ProductDetailsPage/Dashboard/Dashboard";
+import Media from "./components/Pages/Media/Media";
+import ContactUs from "./components/Pages/ContactUs/ContactUs";
+import Login from "./components/Pages/Login/Login";
+import Dashboard from "./components/Pages/Dashboard/Dashboard";
 import { AuthProvider } from "./components/AuthContext/AuthProvider";
 
 

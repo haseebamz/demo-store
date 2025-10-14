@@ -4,7 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router";
-import { AuthContext } from "../../../AuthContext/AuthProvider";
+import { AuthContext } from "../../AuthContext/AuthProvider";
 import { toast } from "react-toastify";
 
 function Login() {

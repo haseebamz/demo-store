@@ -1,6 +1,6 @@
 import React from "react";
-import Categories from "../../../category/categories";
-import Featured from "../../../featured/Featured";
+import Categories from "../../category/categories";
+import Featured from "../../featured/Featured";
 
 
 
