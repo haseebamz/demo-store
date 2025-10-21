@@ -6,6 +6,7 @@ import ProductDetailsPopup from "../ProductDetailsPopup/ProductDetailsPopup";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import { DataContext } from "../../App";
 import { handleAddToCart } from "../handleCart/handleAddToCart";
+import { Link } from "react-router";
 
 function Categories() {
   const { setSharedData, cartItems, setCartItems, setCartCount } = useContext(DataContext);
@@ -36,6 +37,8 @@ function Categories() {
     setPreviewItem(item);
   };
 
+
+  
   return (
     <>
       <div>
@@ -89,9 +92,13 @@ function Categories() {
                             </div>
                             <div className="d-flex justify-content-between align-items-center mt-3">
                               <h3 className="m-0">
-                                <span className="productName">
-                                  {item.title}{" "}
+
+                                <Link to={`/ProductDetailsPage/${item.id}`} >
+                                <span className="productName"  >
+                                  {item.title}
                                 </span>
+                                </Link>
+                                
                               </h3>
                               <span className="cartPlus" onClick={() => handleAddToCart(item, cartItems, setCartCount, setCartItems)} >+</span>
                             </div>

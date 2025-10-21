@@ -1,0 +1,20 @@
+
+.username,
+.email,
+.phone {
+  font-size: 1rem;
+  color: #555;
+  margin: 8px 0;
+}
+
+.addressSection {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+}
+
+.geoSection {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 10px;
+}

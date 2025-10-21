@@ -1,0 +1,13 @@
+.productDetailsWrap{
+    padding-top: 50px;
+}
+
+.productPrice{    
+    font-weight: 600;
+    font-size: 20px;
+    display: block;
+    margin-bottom: 15px;
+}
+h2{
+        margin-block: 30px 10px;
+}

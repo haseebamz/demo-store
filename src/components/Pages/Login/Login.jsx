@@ -18,6 +18,8 @@ function Login() {
   const validationSchema = Yup.object({
     id: Yup.number()
       .typeError("ID must be a number")
+      .min(0, "ID must be 0 or greater")
+      .max(10, "ID must be less than or equal to 10")
       .required("ID is required"),
   });
 
@@ -39,7 +41,7 @@ function Login() {
         setSubmitting(false);
         resetForm();
 
-        navigate("/Dashboard");
+        navigate("/");
       }
     } catch (error) {
       console.error(error);
@@ -51,7 +53,7 @@ function Login() {
       <div className="container">
         <div className="row">
           <div className="col-lg-6 col-md-8 mx-auto">
-        <h3>Login</h3>
+            <h3>Login</h3>
             <Formik
               initialValues={initialValues}
               validationSchema={validationSchema}
@@ -64,10 +66,14 @@ function Login() {
                   <ErrorMessage
                     name="id"
                     component="div"
-                    style={{ color: "red" }}
+                    style={{ color: "red", marginTop: "10px" }}
                   />
 
-                  <button className="CustomBtn mt-4 " type="submit" disabled={isSubmitting}>
+                  <button
+                    className="CustomBtn mt-4 "
+                    type="submit"
+                    disabled={isSubmitting}
+                  >
                     {isSubmitting ? "Logging in..." : "SIGN IN"}
                   </button>
                 </Form>

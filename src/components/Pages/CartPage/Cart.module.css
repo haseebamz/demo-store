@@ -36,3 +36,23 @@
 .cartWrap{
     margin-top: 20px;
 }
+h3{
+    font-size: unset !important ;
+}
+.trashWrapper{
+    cursor: pointer;
+}
+
+@media (min-width:768px) {
+    .cartWrap{
+    margin-top: 50px;
+}
+}
+@media (min-width:1200px) {
+h3{
+font-size: 20px  !important ;
+}
+  .cartWrap{
+    margin-top: 90px;
+}
+}

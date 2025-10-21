@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import styles from "./NavBar.module.css";
 import logo from "/images/demoStoreLogo.png";
 import { DataContext } from "../../App";
@@ -10,6 +10,7 @@ function NavBar() {
   const { cartCount } = useContext(DataContext);
   const { user, logOutUser } = useContext(AuthContext);
   const [isDropDownActive, setIsDropDownActive] = useState(false);
+  const dropdownRef = useRef(null);
 
   const handleDropDown = () => {
     setIsDropDownActive(!isDropDownActive);
@@ -18,6 +19,26 @@ function NavBar() {
   const navToggle = () => {
     setIsActive(!isActive);
   };
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      // If dropdown is open and the click is outside of it
+      if (
+        isDropDownActive &&
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target)
+      ) {
+        setIsDropDownActive(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Clean up when component unmounts
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isDropDownActive]);
 
   return (
     <>
@@ -56,7 +77,7 @@ function NavBar() {
                 </div>
               </Link>
               {user ? (
-                <>
+                <div ref={dropdownRef} className={styles.dropdownWrapper}>
                   {" "}
                   <button
                     className={` ${styles.userDropDown} ${
@@ -70,7 +91,9 @@ function NavBar() {
                       <li>
                         <Link to="/Dashboard">View Profile</Link>
                       </li>
-                      <li>Manage Store</li>
+                      <li>
+                        <Link to="/ManageStoreProducts">Manage Store</Link>
+                      </li>
                       <li
                         onClick={() => {
                           logOutUser();
@@ -78,17 +101,9 @@ function NavBar() {
                       >
                         Log out
                       </li>
-                    </ul>
-                  </button>
-                  {/* <Link to="/" ></Link> */}
-                  {/* <button
-                    onClick={() => {
-                      logOutUser();
-                    }}
-                  >
-                    LOGOUT
-                  </button> */}
-                </>
+                    </ul> 
+                       </button>              
+                </div>
               ) : (
                 <>
                   <Link

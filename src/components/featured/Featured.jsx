@@ -6,7 +6,7 @@ import styles from "./Featured.module.css"
 import { handleAddToCart } from "../handleCart/handleAddToCart";
 
 function Featured() {
-  const { sharedData } = useContext(DataContext);
+  const { sharedData, cartItems, setCartCount, setCartItems } = useContext(DataContext);
     const [detailsModal, showDetailsModal] = useState(false);
     const [previewItem, setPreviewItem] = useState();
 
@@ -91,7 +91,7 @@ function Featured() {
                                   {item.title}{" "}
                                 </span>
                               </h3>
-                              <span className="cartPlus" onClick={() => handleAddToCart(item)} >+</span>
+                              <span className="cartPlus" onClick={() => handleAddToCart(item, cartItems, setCartCount, setCartItems)} >+</span>
                             </div>
                 <span className="productPrice">${item.price}</span>
               </div>

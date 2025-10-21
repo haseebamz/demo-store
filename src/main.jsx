@@ -12,10 +12,12 @@ import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter } from "react-router";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+  // <StrictMode>
+  <>
     <ToastContainer position="top-right" autoClose={1000} />
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </StrictMode>
+    </>
+  // </StrictMode>
 );
