@@ -45,6 +45,7 @@ function Login() {
       }
     } catch (error) {
       console.error(error);
+        toast.error("Failed to Login");
     }
   };
 
@@ -66,7 +67,7 @@ function Login() {
                   <ErrorMessage
                     name="id"
                     component="div"
-                    style={{ color: "red", marginTop: "10px" }}
+                    className="errorMessage"
                   />
 
                   <button

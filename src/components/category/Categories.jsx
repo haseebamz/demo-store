@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import styles from "./Categories.module.css";
 import ProductDetailsPopup from "../ProductDetailsPopup/ProductDetailsPopup";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
@@ -9,28 +8,29 @@ import { handleAddToCart } from "../handleCart/handleAddToCart";
 import { Link } from "react-router";
 
 function Categories() {
-  const { setSharedData, cartItems, setCartItems, setCartCount } = useContext(DataContext);
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { loading, sharedData, cartItems, setCartItems, setCartCount } = useContext(DataContext);
+  // const [products, setProducts] = useState([]);
+  
   const [detailsModal, showDetailsModal] = useState(false);
   const [previewItem, setPreviewItem] = useState();
 
-  const fetchProducts = async () => {
-    try {
-      const response = await axios.get("https://fakestoreapi.com/products");
-      // console.log("API response", response.data);
-      setProducts(response.data);
-      setSharedData(response.data);
-    } catch (error) {
-      console.error("API error", error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+  // const fetchProducts = async () => {
+  //   try {
+  //     const response = await axios.get("https://fakestoreapi.com/products");
 
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+      
+  //     setProducts(response.data);
+  //     setSharedData(response.data);
+  //   } catch (error) {
+  //     console.error("API error", error.message);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchProducts();
+  // }, []);
 
   const handlePreview = (item) => {
     showDetailsModal(true);
@@ -67,7 +67,7 @@ function Categories() {
                       </p>
                     </div>
                     <div className={`col-lg-9 ${styles.categoryCards} `}>
-                      {products
+                      {sharedData
                         .filter((item) => item.category === "men's clothing")
                         .slice(0, 3)
                         .map((item) => (
@@ -122,7 +122,7 @@ function Categories() {
                       </p>
                     </div>
                     <div className={`col-lg-9 ${styles.categoryCards} `}>
-                      {products
+                      {sharedData
                         .filter((item) => item.category === "women's clothing")
                         .slice(0, 3)
                         .map((item) => (
@@ -172,7 +172,7 @@ function Categories() {
                       </p>
                     </div>
                     <div className={`col-lg-9 ${styles.categoryCards} `}>
-                      {products
+                      {sharedData
                         .filter((item) => item.category === "electronics")
                         .slice(0, 3)
                         .map((item) => (
@@ -222,7 +222,7 @@ function Categories() {
                       </p>
                     </div>
                     <div className={`col-lg-9 ${styles.categoryCards} `}>
-                      {products
+                      {sharedData
                         .filter((item) => item.category === "jewelery")
                         .slice(0, 3)
                         .map((item) => (

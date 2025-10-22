@@ -3,7 +3,7 @@ import "./App.css";
 import NavBar from "./components/navbar/navBar";
 import Cart from "./components/Pages/CartPage/Cart";
 import Home from "./components/Pages/Home/Home";
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import Media from "./components/Pages/Media/Media";
 import ContactUs from "./components/Pages/ContactUs/ContactUs";
 import Login from "./components/Pages/Login/Login";
@@ -11,6 +11,7 @@ import Dashboard from "./components/Pages/Dashboard/Dashboard";
 import { AuthProvider } from "./components/AuthContext/AuthProvider";
 import ManageStoreProducts from "./components/Pages/ManageStoreProducts/ManageStoreProducts";
 import ProductDetailsPage from "./components/Pages/ProductDetailsPage/ProductDetailsPage";
+import axios from "axios";
 
 export const DataContext = createContext();
 
@@ -21,9 +22,32 @@ const ProtectedRoute = ({ children }) => {
 };
 
 function App() {
+
+
   const [sharedData, setSharedData] = useState([]);
   const [cartCount, setCartCount] = useState(0);
   const [cartItems, setCartItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  
+   const fetchProducts = async () => {
+      try {
+        const response = await axios.get("https://fakestoreapi.com/products");
+  
+        
+        // setProducts(response.data);
+        setSharedData(response.data);
+      } catch (error) {
+        console.error("API error", error.message);
+      } finally {
+        setLoading(false)
+      }
+    };
+  
+    useEffect(() => {
+      fetchProducts();
+    }, []);
+
 
   return (
     <>
@@ -37,6 +61,7 @@ function App() {
               setCartCount,
               cartItems,
               setCartItems,
+              loading
             }}
           >
             <NavBar />
