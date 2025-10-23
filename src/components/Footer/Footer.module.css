@@ -1,0 +1,10 @@
+.footerBrand{
+    max-width: 150px;
+        margin-inline: auto;
+}
+
+@media (min-width:768px) {
+    .footerBrand{
+        margin-inline: unset;
+}
+}

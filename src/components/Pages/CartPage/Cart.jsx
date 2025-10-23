@@ -6,13 +6,13 @@ function Cart() {
   const { cartItems, setCartItems, setCartCount } = useContext(DataContext);
   
 
-  useEffect(() => {
-    const storedItems = JSON.parse(localStorage.getItem("cartItems")) || [] ;
-    const storedCount = parseInt(localStorage.getItem("cartCount",)) || 0 ;
+  // useEffect(() => {
+  //   const storedItems = JSON.parse(localStorage.getItem("cartItems")) || [] ;
+  //   const storedCount = parseInt(localStorage.getItem("cartCount",)) || 0 ;
 
-    setCartItems(storedItems);
-    setCartCount(storedCount);
-  }, [])
+  //   setCartItems(storedItems);
+  //   setCartCount(storedCount);
+  // }, [])
 
 
   // Handle quantity change
@@ -86,7 +86,7 @@ function Cart() {
                           className={styles.trashWrapper}
                           onClick={() => handleCartRemove(item.id)}
                         >
-                          <i class="fa-solid fa-trash"></i>
+                          <i className="fa-solid fa-trash"></i>
                         </div>
                       </div>
                     </div>

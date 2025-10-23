@@ -5,10 +5,11 @@ import { toast } from "react-toastify";
 export const handleAddToCart = async (product, cartItems, setCartCount, setCartItems) => {
 
   const payLoad = { userId: 1, products: [{ id: product.id }] };
+   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   try {
     const response = await axios.post(
-      "https://fakestoreapi.com/carts",
+     `${API_BASE_URL}/carts`,
       payLoad
     );
     console.log("API response", response);

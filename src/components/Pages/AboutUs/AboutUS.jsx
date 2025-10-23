@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Media() {
+function AboutUS() {
   return (
     <div className='container' >
-      <h1>Media</h1>
+      <h1>About Us under construction</h1>
     </div>
   )
 }
 
-export default Media
+export default AboutUS;

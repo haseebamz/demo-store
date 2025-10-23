@@ -1,19 +1,15 @@
 import React from 'react'
-import AddProduct from '../ManageStore/AddProduct'
-import EditProduct from '../ManageStore/EditProduct'
+import ProductSave from '../ManageStore/ProductSave'
 
-function ManageProductsModal({ product, onClose, mode }) {
+function ManageProductsModal({ product, onClose }) {
     return (
         <>
             <div className="modal-overlay">
-                <div className="modal-box">
+                <div className="modal-box manageProductModal">
                     <button onClick={onClose} className='closeModal'  >X</button>
-                    <div>                   
-
-                        {mode === "edit" ? ( <EditProduct product={product} /> ) : <AddProduct product={product}/>  }
-                        
-                        
-                    </div>
+                              
+                    <ProductSave  product={product} />                    
+                   
 
                 </div>
             </div>

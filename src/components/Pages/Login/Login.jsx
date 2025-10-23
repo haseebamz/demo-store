@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 function Login() {
   const { setUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const initialValues = {
     id: "",
@@ -26,7 +27,7 @@ function Login() {
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
       const response = await axios.get(
-        `https://fakestoreapi.com/users/${values.id}`
+        `${API_BASE_URL}/users/${values.id}`
       );
       const userData = response.data;
 

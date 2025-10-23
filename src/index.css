@@ -55,7 +55,7 @@ a {
   text-decoration: none;
   color: var(--black);
 }
-.wrapper{
+.wrapper {
   overflow: hidden;
   padding-top: 50px;
 }
@@ -70,8 +70,8 @@ a {
   position: relative;
   cursor: pointer;
 }
-.productImg img{
-      aspect-ratio: 4 / 5;
+.productImg img {
+  aspect-ratio: 4 / 5;
 }
 .productCard {
   padding: 15px;
@@ -83,12 +83,12 @@ a {
   text-align: center;
 }
 .productName {
-    width: 177px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block;
-        font-size: 16px;
+  width: 177px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  font-size: 16px;
 }
 .productPrice {
   color: var(--green);
@@ -96,7 +96,6 @@ a {
 }
 
 .productImg .fa-eye {
-
   color: var(--white);
 }
 .cardPreviewHover {
@@ -126,66 +125,66 @@ a {
   font-size: 22px;
   display: flex;
   gap: 10px;
-      border: 1px solid #d5daea;
+  border: 1px solid #d5daea;
   border-radius: 4px;
   max-width: fit-content;
   padding-inline: 10px;
-  margin-block: 15px ;
-    -webkit-user-select: none; /* Safari */
+  margin-block: 15px;
+  -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
-
 }
 
-.addToCartBox span:not(:nth-child(2)){
+.addToCartBox span:not(:nth-child(2)) {
   cursor: pointer;
 }
 .CustomBtn {
-    background-color: var(--white);
-    color: var(--primary-color);
-    padding: 7px 29px;
-    font-size: 15px;
-    border-radius: 8px;
-    border: 1px solid var(--primary-color);
-    display: inline-block;
+  background-color: var(--white);
+  color: var(--primary-color);
+  padding: 7px 29px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
+  display: inline-block;
 }
 
-.CustomBtn:hover, .btnBgPrimary {
-    background-color: var(--primary-color);
-    color: var(--white);
+.CustomBtn:hover,
+.btnBgPrimary {
+  background-color: var(--primary-color);
+  color: var(--white);
 }
 .btnBgPrimary:hover {
-    background-color: var(--white);
-    color: var(--primary-color);
+  background-color: var(--white);
+  color: var(--primary-color);
 }
 .closeModal {
   position: absolute;
-     top: -7px;
-    right: -7px;
-    border-radius: 50%;
-    padding: 4px 8px;
+  top: -7px;
+  right: -7px;
+  border-radius: 50%;
+  padding: 4px 8px;
   line-height: 1;
   background-color: var(--primary-color);
   color: var(--white);
-  border:1px solid var(--primary-color);
+  border: 1px solid var(--primary-color);
   transition: all 0.3s ease;
-      font-size: 18px;
+  font-size: 18px;
 }
-.closeModal:hover{
+.closeModal:hover {
   color: var(--primary-color);
   background-color: var(--white);
 }
 .cartPlus {
-    color: var(--primary-color);
-    font-weight: 700;
-    font-size: 20px;
-    border: 2px solid var(--primary-color);
-    max-width: fit-content;
-    line-height: 15px;
-    padding: 1px 4px 5px 4px;
-    border-radius: 10px;
-    max-height: fit-content;
-    cursor: pointer;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 20px;
+  border: 2px solid var(--primary-color);
+  max-width: fit-content;
+  line-height: 15px;
+  padding: 1px 4px 5px 4px;
+  border-radius: 10px;
+  max-height: fit-content;
+  cursor: pointer;
 }
 
 .modal-overlay {
@@ -194,7 +193,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -207,7 +206,7 @@ a {
   border-radius: 12px;
   width: 400px;
   max-width: 90%;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 .modal-box {
   position: relative;
@@ -217,10 +216,35 @@ a {
   top: 0;
   right: 0;
 } */
- .errorMessage {
+.errorMessage {
   margin-top: 10px;
   color: red;
- }
+}
+.featuredWrap .slick-slide > div {
+  display: flex;
+  justify-content: center;
+}
+.slick-arrow::before {
+  color: var(--primary-color);
+      font-size: 25px;
+}
+.navItems a{
+  position: relative;
+}
+.navItems a::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  background-color: var(--primary-color);
+  height: 2px;
+  transition: width 0.3s ease;
+}
+.navItems a:hover::after{
+  width: 30px;
+  transition: width 0.3s ease;
+}
 @media (min-width: 768px) {
   h2 {
     font-size: 25px;
@@ -231,7 +255,7 @@ a {
 }
 
 @media (min-width: 992px) {
-  .wrapper{
+  .wrapper {
     padding-top: 64px;
   }
   .modal-overlay {
@@ -255,9 +279,12 @@ a {
     max-width: 90%;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   }
+  .manageProductModal {
+    width: 600px;
+  }
 }
-@media (min-width:1200px) {
-  .wrapper{
-  padding-top: 64px;
-}
+@media (min-width: 1200px) {
+  .wrapper {
+    padding-top: 64px;
+  }
 }

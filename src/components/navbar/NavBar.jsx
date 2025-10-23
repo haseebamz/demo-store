@@ -52,16 +52,16 @@ function NavBar() {
             <div className={styles.navBrandWrapper}>
               <Link to="/">
                 <div className={styles.navBrand}>
-                  <img src={logo} alt="Demo Store" width={402} height={203} />
+                  <img src={logo} alt="Logo" width={402} height={203} />
                 </div>
               </Link>
             </div>
-            <ul className={styles.navList}>
+            <ul className={`${styles.navList} navItems`} >
               <li>
                 <Link to="/">Home </Link>
               </li>
               <li>
-                <Link to="/Media">Media </Link>
+                <Link to="/AboutUs">About Us</Link>
               </li>
               <li>
                 <Link to="/ContactUs">Contact Us </Link>

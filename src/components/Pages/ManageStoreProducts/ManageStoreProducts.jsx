@@ -6,31 +6,29 @@ import ManageProductsModal from "../../ManageProductsModal/ManageProductsModal";
 
 function ManageStoreProducts() {
   const { sharedData, loading } = useContext(DataContext);
-  const [isModalActive, setIsModalActive] = useState(false)
-  const [mode, setMode] = useState("")
-  const [product, setproduct] = useState({
-    id: 0,
-
-  })
+  const [isModalActive, setIsModalActive] = useState(false);
+  const [product, setproduct] = useState()
 
   const handleAddProduct = () => {
-    setMode("add")
-    setIsModalActive(!isModalActive)
+    setIsModalActive(true);
+    setproduct({
+      id: 0,
+      title: "",
+      price: 0,
+      description: "",
+      category: "",
+      image: "",
+    })
   }
 
   const handleEditProduct = (item) => {
-    setMode("edit")
-    setIsModalActive(!isModalActive);
+    setIsModalActive(true);
     setproduct(item);
   };
 
-
-
-
-
   return (
     <>
-      {isModalActive ? <ManageProductsModal mode={mode} product={product} onClose={() => setIsModalActive(false)} /> : ""}
+
       <section>
         <div className="container">
 
@@ -43,7 +41,7 @@ function ManageStoreProducts() {
 
             <>
               <h2>Manage Products</h2>
-              <button onClick={() => handleAddProduct()} > Add Product</button>
+              <button onClick={() => handleAddProduct()} className="CustomBtn btnBgPrimary my-4" > Add Product</button>
               <div className={` ${styles.tableWrap} table-responsive `}>
                 <table className="table table-bordered table-hover  align-middle">
                   <thead className="table-dark">
@@ -113,6 +111,7 @@ function ManageStoreProducts() {
           )}
         </div>
       </section>
+      {isModalActive ? <ManageProductsModal product={product} onClose={() => setIsModalActive(false)} /> : ""}
     </>
   );
 }

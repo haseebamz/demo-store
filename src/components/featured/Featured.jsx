@@ -4,11 +4,12 @@ import { DataContext } from "../../App";
 import ProductDetailsPopup from "../ProductDetailsPopup/ProductDetailsPopup";
 import styles from "./Featured.module.css"
 import { handleAddToCart } from "../handleCart/handleAddToCart";
+import { Link } from "react-router";
 
 function Featured() {
   const { sharedData, cartItems, setCartCount, setCartItems } = useContext(DataContext);
-    const [detailsModal, showDetailsModal] = useState(false);
-    const [previewItem, setPreviewItem] = useState();
+  const [detailsModal, showDetailsModal] = useState(false);
+  const [previewItem, setPreviewItem] = useState();
 
   const handlePreview = (item) => {
     showDetailsModal(true);
@@ -25,6 +26,15 @@ function Featured() {
     initialSlide: 0,
     arrows: true,
     responsive: [
+      //     {
+      //   breakpoint: 1600,
+      //   settings: {
+      //     slidesToShow: 4,
+      //     slidesToScroll: 4,
+      //     infinite: true,
+      //     dots: true,
+      //   },
+      // },
       {
         breakpoint: 1024,
         settings: {
@@ -38,7 +48,7 @@ function Featured() {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          arrows:false,
+          arrows: false,
           slidesToScroll: 2,
           initialSlide: 2,
         },
@@ -62,12 +72,12 @@ function Featured() {
         />
       )}
 
-      <section className={` my-4 ${styles.featuredWrap}`} >
+      <section className={` my-5 featuredWrap ${styles.featuredWrap}`} >
         <div className="container">
-            <h2 className="text-center mb-5" >Featured Products</h2>
+          <h2 className="text-center mb-5" >Featured Products</h2>
           <Slider {...settings}>
             {sharedData?.map((item) => (
-              <div key={item.id} className="productCard">
+              <div key={item.id} className="productCard my-3">
                 <div className="productImg d-flex align-items-center justify-content-center ">
                   <div>
                     <img
@@ -81,18 +91,21 @@ function Featured() {
                     className="cardPreviewHover"
                     onClick={() => handlePreview(item)}
                   >
-                 <i className="fa-solid fa-eye"></i>
+                    <i className="fa-solid fa-eye"></i>
                     <span>Quick Preview</span>
                   </div>
                 </div>
-               <div className="d-flex justify-content-between align-items-center mt-3">
-                              <h3 className="m-0">
-                                <span className="productName">
-                                  {item.title}{" "}
-                                </span>
-                              </h3>
-                              <span className="cartPlus" onClick={() => handleAddToCart(item, cartItems, setCartCount, setCartItems)} >+</span>
-                            </div>
+                <div className="d-flex justify-content-between align-items-center mt-3">
+                  <h3 className="m-0">
+                    <Link to={`/ProductDetailsPage/${item.id}`} >
+                      <span className="productName"  >
+                        {item.title}
+                      </span>
+                    </Link>
+                    
+                  </h3>
+                  <span className="cartPlus" onClick={() => handleAddToCart(item, cartItems, setCartCount, setCartItems)} >+</span>
+                </div>
                 <span className="productPrice">${item.price}</span>
               </div>
             ))}

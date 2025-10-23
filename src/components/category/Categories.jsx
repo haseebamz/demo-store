@@ -9,28 +9,10 @@ import { Link } from "react-router";
 
 function Categories() {
   const { loading, sharedData, cartItems, setCartItems, setCartCount } = useContext(DataContext);
-  // const [products, setProducts] = useState([]);
   
   const [detailsModal, showDetailsModal] = useState(false);
   const [previewItem, setPreviewItem] = useState();
 
-  // const fetchProducts = async () => {
-  //   try {
-  //     const response = await axios.get("https://fakestoreapi.com/products");
-
-      
-  //     setProducts(response.data);
-  //     setSharedData(response.data);
-  //   } catch (error) {
-  //     console.error("API error", error.message);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchProducts();
-  // }, []);
 
   const handlePreview = (item) => {
     showDetailsModal(true);
@@ -146,9 +128,11 @@ function Categories() {
                             </div>
                              <div className="d-flex justify-content-between align-items-center mt-3">
                               <h3 className="m-0">
-                                <span className="productName">
-                                  {item.title}{" "}
+                               <Link to={`/ProductDetailsPage/${item.id}`} >
+                                <span className="productName"  >
+                                  {item.title}
                                 </span>
+                                </Link>
                               </h3>
                               <span className="cartPlus" onClick={() => handleAddToCart(item, cartItems, setCartCount, setCartItems)} >+</span>
                             </div>
@@ -196,9 +180,11 @@ function Categories() {
                             </div>
                            <div className="d-flex justify-content-between align-items-center mt-3">
                               <h3 className="m-0">
-                                <span className="productName">
-                                  {item.title}{" "}
+                               <Link to={`/ProductDetailsPage/${item.id}`} >
+                                <span className="productName"  >
+                                  {item.title}
                                 </span>
+                                </Link>
                               </h3>
                               <span className="cartPlus" onClick={() => handleAddToCart(item, cartItems, setCartCount, setCartItems)} >+</span>
                             </div>
@@ -246,9 +232,11 @@ function Categories() {
                             </div>
                              <div className="d-flex justify-content-between align-items-center mt-3">
                               <h3 className="m-0">
-                                <span className="productName">
-                                  {item.title}{" "}
+                                  <Link to={`/ProductDetailsPage/${item.id}`} >
+                                <span className="productName"  >
+                                  {item.title}
                                 </span>
+                                </Link>
                               </h3>
                              <span className="cartPlus" onClick={() => handleAddToCart(item, cartItems, setCartCount, setCartItems)} >+</span>
                             </div>
