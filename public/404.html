@@ -2,10 +2,11 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; url=/demo-store/" />
+    <title>Redirecting...</title>
     <script>
-      // Fix GitHub Pages refresh by redirecting back to index.html
-      const redirect = window.location.origin + '/demo-store/';
+      // Redirect GitHub Pages refreshes back to the correct React route
+      const segment = '/demo-store';
+      const redirect = segment + window.location.pathname.replace(segment, '') + window.location.search + window.location.hash;
       window.location.replace(redirect);
     </script>
   </head>
