@@ -9,13 +9,14 @@ import "./index.css";
 import App from "./App.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { BrowserRouter } from "react-router";
+import { HashRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ToastContainer position="top-right" autoClose={1000} />
-    <BrowserRouter basename="/demo-store" >
+    <HashRouter  basename="/demo-store" >
       <App />
-    </BrowserRouter>
+    </HashRouter >
+
   </StrictMode>
 );
