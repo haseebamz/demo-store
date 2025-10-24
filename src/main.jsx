@@ -14,7 +14,7 @@ import { BrowserRouter } from "react-router";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ToastContainer position="top-right" autoClose={1000} />
-    <BrowserRouter>
+    <BrowserRouter basename="/demo-store" >
       <App />
     </BrowserRouter>
   </StrictMode>
