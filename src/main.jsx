@@ -9,17 +9,17 @@ import "./index.css";
 import App from "./App.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { HashRouter } from "react-router";
+import { BrowserRouter } from "react-router";
 
-// const basename =
-//   import.meta.env.MODE === "production" ? "/demo-store" : "/";
+const basename =
+  import.meta.env.MODE === "production" ? "/demo-store" : "/";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ToastContainer position="top-right" autoClose={1000} />
-    <HashRouter >
+    <BrowserRouter >
       <App />
-    </HashRouter >
+    </BrowserRouter >
 
   </StrictMode>
 );

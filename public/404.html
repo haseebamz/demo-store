@@ -2,12 +2,11 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <script type="text/javascript">
-      // If 404 happens, GitHub Pages serves this file
-      // This script redirects back to the same path, preserving the correct route
-      const pathname = window.location.pathname;
-      const newURL = window.location.origin + '/demo-store/#' + pathname.replace('/demo-store', '');
-      window.location.replace(newURL);
+    <meta http-equiv="refresh" content="0; url=/demo-store/" />
+    <script>
+      // Fix GitHub Pages refresh by redirecting back to index.html
+      const redirect = window.location.origin + '/demo-store/';
+      window.location.replace(redirect);
     </script>
   </head>
   <body></body>
