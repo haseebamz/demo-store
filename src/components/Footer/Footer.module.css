@@ -1,6 +1,7 @@
 .footerBrand{
     max-width: 150px;
         margin-inline: auto;
+        display: block;
 }
 
 @media (min-width:768px) {

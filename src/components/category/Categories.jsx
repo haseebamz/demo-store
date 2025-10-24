@@ -24,9 +24,9 @@ function Categories() {
   return (
     <>
       <div>
-        {loading ? (
+        {/* {loading ? (
           <LoadingSpinner />
-        ) : (
+        ) : ( */}
           <div>
             {detailsModal && (
               <ProductDetailsPopup
@@ -249,7 +249,7 @@ function Categories() {
               </div>
             </div>
           </div>
-        )}
+        {/* )} */}
       </div>
     </>
   );

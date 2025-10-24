@@ -56,6 +56,7 @@ function Login() {
         <div className="row">
           <div className="col-lg-6 col-md-8 mx-auto">
             <h3>Login</h3>
+          <p>Please add ID between 1 to 10</p>
             <Formik
               initialValues={initialValues}
               validationSchema={validationSchema}

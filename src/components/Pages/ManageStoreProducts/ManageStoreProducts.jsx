@@ -3,11 +3,14 @@ import { DataContext } from "../../../App";
 import LoadingSpinner from "../../LoadingSpinner/LoadingSpinner";
 import styles from "./ManageStoreProducts.module.css"
 import ManageProductsModal from "../../ManageProductsModal/ManageProductsModal";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 function ManageStoreProducts() {
   const { sharedData, loading } = useContext(DataContext);
   const [isModalActive, setIsModalActive] = useState(false);
   const [product, setproduct] = useState()
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const handleAddProduct = () => {
     setIsModalActive(true);
@@ -25,6 +28,17 @@ function ManageStoreProducts() {
     setIsModalActive(true);
     setproduct(item);
   };
+
+  const handleDelete = async (item) => {
+    try {
+      const response = await axios.delete(`${API_BASE_URL}/products/${item.id}`);
+      console.log(response)      
+      toast.success("Product has been deleted")
+      
+    } catch (error) {
+      toast.error("Error deleting Product") 
+    }
+  }
 
   return (
     <>
@@ -89,7 +103,7 @@ function ManageStoreProducts() {
                             </button>
                             <button
                               className="bg-transparent"
-                            // onClick={() => handleDelete(item.id)}
+                            onClick={() => handleDelete(item)}
                             >
                               <svg
                                 width={20}

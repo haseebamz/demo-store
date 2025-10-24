@@ -43,9 +43,8 @@ function NavBar() {
   return (
     <>
       <div
-        className={`${styles.siteHeader} ${
-          isActive ? styles.activeHeader : ""
-        } `}
+        className={`${styles.siteHeader} ${isActive ? styles.activeHeader : ""
+          } `}
       >
         <div className="container">
           <div className={styles.innerContainer}>
@@ -66,6 +65,10 @@ function NavBar() {
               <li>
                 <Link to="/ContactUs">Contact Us </Link>
               </li>
+              {user ? <li>
+                <Link to="/ManageStoreProducts">Manage Inventory</Link>
+              </li> : null}
+
             </ul>
             <div
               className={`d-flex align-items-center gap-3 justify-content-end gap-lg-4 ${styles.navRightWrapper} `}
@@ -80,9 +83,8 @@ function NavBar() {
                 <div ref={dropdownRef} className={styles.dropdownWrapper}>
                   {" "}
                   <button
-                    className={` ${styles.userDropDown} ${
-                      isDropDownActive ? styles.activeDropDown : ""
-                    }`}
+                    className={` ${styles.userDropDown} ${isDropDownActive ? styles.activeDropDown : ""
+                      }`}
                     onClick={() => handleDropDown()}
                   >
                     Hi, {user.username}{" "}
@@ -101,8 +103,8 @@ function NavBar() {
                       >
                         Log out
                       </li>
-                    </ul> 
-                       </button>              
+                    </ul>
+                  </button>
                 </div>
               ) : (
                 <>

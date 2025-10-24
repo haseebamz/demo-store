@@ -1,9 +1,10 @@
 import React from 'react'
+import aboutUS from "/images/aboutUs.png"
 
 function AboutUS() {
   return (
-    <div className='container' >
-      <h1>About Us under construction</h1>
+    <div >
+      <img className='w-100'  src={aboutUS} alt="About us" width={1472} height={704} />
     </div>
   )
 }
