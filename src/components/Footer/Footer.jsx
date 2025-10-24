@@ -7,7 +7,7 @@ function Footer() {
   return (
     <footer className="bg-dark text-light pt-5 pb-3">
       <div className="container">
-        <div className="row text-center text-md-start">
+        <div className="row ">
           {/* Store Info */}
           <div className="col-md-4 mb-4">
             <Link to="/" className={styles.footerBrand}>
@@ -48,7 +48,7 @@ function Footer() {
             </ul>
 
             {/* Social Icons */}
-            <div className="d-flex justify-content-center justify-content-md-start gap-3 mt-3">
+            <div className="d-flex  gap-3 mt-3">
               <a href="https://www.facebook.com/badman299/" target="_blank"  className="text-light fs-5"><i className="fa-brands fa-facebook"></i></a>
               <a href="https://www.instagram.com/hsb.exe/" target="_blank"  className="text-light fs-5"><i className="fa-brands fa-instagram"></i></a>
               <a href="https://x.com/Mianhere" target="_blank"  className="text-light fs-5"><i className="fa-brands fa-x-twitter"></i></a>

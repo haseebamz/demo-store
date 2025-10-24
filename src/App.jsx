@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router";
+import { Navigate, Route, Routes, useLocation } from "react-router";
 import "./App.css";
 import NavBar from "./components/navbar/navBar";
 import Cart from "./components/Pages/CartPage/Cart";
@@ -24,6 +24,7 @@ const ProtectedRoute = ({ children }) => {
 
 function App() {
 
+  const location = useLocation();
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const [sharedData, setSharedData] = useState([]);
   const [cartCount, setCartCount] = useState(0);
@@ -60,6 +61,9 @@ function App() {
   }, []);
 
 
+  const hideLayoutRoutes = ["/Login", "/Cart", "/Dashboard"]
+  const shouldHideLayout = hideLayoutRoutes.includes(location.pathname)
+
   return (
     <>
       <div className="wrapper">
@@ -79,7 +83,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />}></Route>
               <Route path="/Cart" element={<Cart />}></Route>
-              <Route path="/AboutUs" element={ <AboutUS/>  }></Route>
+              <Route path="/AboutUs" element={<AboutUS />}></Route>
               <Route path="/ContactUs" element={<ContactUs />}></Route>
               <Route path="/Login" element={<Login />}></Route>
               <Route
@@ -103,7 +107,8 @@ function App() {
                 element={<ProductDetailsPage />}
               ></Route>
             </Routes>
-            <Footer/>
+            {!shouldHideLayout && <Footer />}
+
           </DataContext.Provider>
         </AuthProvider>
       </div>

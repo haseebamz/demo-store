@@ -68,22 +68,22 @@ function ProductSave({ product }) {
 
 
     const validationSchema = Yup.object({
-        // id: Yup.number().moreThan(0, "ID could not be 0").required("ID is required").positive("ID must be positive"),
-        // price: Yup.number().typeError("Price must be a number").required("Price is required"),
-        // title: Yup.string().required("Name is required"),
-        // description: Yup.string().required("Description is required"),
-        // category: Yup.string().required("Description is required"),
-        // image: Yup.mixed()
-        //     .required("Image is required")
-        //     .test("fileSize", "File size is too large", (file) => {
-        //         return file && file.size <= 2 * 1024 * 1024; // 2MB
-        //     })
-        //     .test("fileType", "Unsupported file format", (file) => {
-        //         return (
-        //             file &&
-        //             ["image/jpeg", "image/png", "image/jpg", "image/webp"].includes(file.type)
-        //         );
-        //     }),
+        id: Yup.number().moreThan(0, "ID could not be 0").required("ID is required").positive("ID must be positive"),
+        price: Yup.number().typeError("Price must be a number").required("Price is required"),
+        title: Yup.string().required("Name is required"),
+        description: Yup.string().required("Description is required"),
+        category: Yup.string().required("Description is required"),
+        image: Yup.mixed()
+            .required("Image is required")
+            .test("fileSize", "File size is too large", (file) => {
+                return file && file.size <= 2 * 1024 * 1024; // 2MB
+            })
+            .test("fileType", "Unsupported file format", (file) => {
+                return (
+                    file &&
+                    ["image/jpeg", "image/png", "image/jpg", "image/webp"].includes(file.type)
+                );
+            }),
     })
 
 
@@ -97,13 +97,6 @@ function ProductSave({ product }) {
             >
                 {({ values, setFieldValue }) => {
 
-
-                    // useEffect(() => {
-                    //     if (typeof values.image !== "string") {
-                    //         URL.createObjectURL(values.image)
-                    //     }
-
-                    // }, [values.image])
 
 
                     return (

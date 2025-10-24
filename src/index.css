@@ -242,8 +242,10 @@ a {
   height: 2px;
   transition: width 0.3s ease;
 }
+.navItems a.active::after,
 .navItems a:hover::after{
-  width: 30px;
+  /* width: 40px; */
+  width: 100%;
   transition: width 0.3s ease;
 }
 @media (min-width: 768px) {

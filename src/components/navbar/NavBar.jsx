@@ -2,7 +2,7 @@ import React, { useContext, useState, useRef, useEffect } from "react";
 import styles from "./NavBar.module.css";
 import logo from "/images/demoStoreLogo.png";
 import { DataContext } from "../../App";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 import { AuthContext } from "../AuthContext/AuthProvider";
 
 function NavBar() {
@@ -49,6 +49,7 @@ function NavBar() {
         <div className="container">
           <div className={styles.innerContainer}>
             <div className={styles.navBrandWrapper}>
+
               <Link to="/">
                 <div className={styles.navBrand}>
                   <img src={logo} alt="Logo" width={402} height={203} />
@@ -57,16 +58,16 @@ function NavBar() {
             </div>
             <ul className={`${styles.navList} navItems`} >
               <li>
-                <Link to="/">Home </Link>
+                <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")} >Home</NavLink>
               </li>
               <li>
-                <Link to="/AboutUs">About Us</Link>
+                <NavLink to="/AboutUs" className={({ isActive }) => (isActive ? "active" : "")} >About Us</NavLink>
               </li>
               <li>
-                <Link to="/ContactUs">Contact Us </Link>
+                <NavLink to="/ContactUs" className={({ isActive }) => (isActive ? "active" : "")} >Contact Us</NavLink>
               </li>
               {user ? <li>
-                <Link to="/ManageStoreProducts">Manage Inventory</Link>
+                <NavLink to="/ManageStoreProducts" className={({ isActive }) => (isActive ? "active" : "")} >Manage Inventory</NavLink>
               </li> : null}
 
             </ul>

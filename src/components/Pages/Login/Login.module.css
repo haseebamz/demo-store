@@ -1,8 +1,8 @@
 .loginWrapper {
-padding-top: 50px;
+    padding-block: 50px;
 }
 
-h3{
+h3 {
     font-size: 1.625rem;
     color: #000;
     margin-bottom: 1.5rem;
@@ -10,16 +10,18 @@ h3{
 
 @media (min-width: 992px) {
     .loginWrapper {
-        padding-top: 61px;
+        padding-block: 100px;
     }
 }
-@media (min-width: 1400px) {
+
+@media (min-width: 1200px) {
     .loginWrapper {
-               padding-top: 71px;
+        padding-block: 150px;
     }
 }
+
 @media (min-width: 1600px) {
     .loginWrapper {
-               padding-top: 90px;
+        padding-block: 250px;
     }
 }
