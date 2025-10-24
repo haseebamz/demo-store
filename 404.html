@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <script type="text/javascript">
-      // Redirect all 404s to index.html while preserving path
-      var redirect = window.location.origin + '/demo-store/index.html';
-      window.location.replace(redirect);
+      // If 404 happens, GitHub Pages serves this file
+      // This script redirects back to the same path, preserving the correct route
+      const pathname = window.location.pathname;
+      const newURL = window.location.origin + '/demo-store/#' + pathname.replace('/demo-store', '');
+      window.location.replace(newURL);
     </script>
   </head>
   <body></body>
