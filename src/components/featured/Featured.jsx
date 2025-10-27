@@ -10,6 +10,19 @@ function Featured() {
   const { sharedData, cartItems, setCartCount, setCartItems } = useContext(DataContext);
   const [detailsModal, showDetailsModal] = useState(false);
   const [previewItem, setPreviewItem] = useState();
+   const [sliderKey, setSliderKey] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSliderKey(prev => prev + 1);
+    };
+
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
 
 
@@ -75,7 +88,7 @@ function Featured() {
       <section className={` my-5 featuredWrap ${styles.featuredWrap}`} >
         <div className="container">
           <h2 className="text-center mb-5" >Featured Products</h2>
-          <Slider {...settings}>
+          <Slider key={sliderKey} {...settings}>
             {sharedData?.map((item) => (
               <div key={item.id} className="productCard my-3">
                 <div className="productImg d-flex align-items-center justify-content-center ">
