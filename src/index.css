@@ -261,6 +261,7 @@ a {
   .wrapper {
     padding-top: 64px;
   }
+    .w-lg-30 { width: 30% !important; }
   .modal-overlay {
     position: fixed;
     top: 0;

@@ -48,6 +48,12 @@ function NavBar() {
       >
         <div className="container">
           <div className={styles.innerContainer}>
+            <div className="d-flex align-items-center gap-2 w-lg-30" >
+             <div className={styles.navToggler} onClick={() => navToggle()}>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             <div className={styles.navBrandWrapper}>
 
               <Link to="/">
@@ -56,7 +62,8 @@ function NavBar() {
                 </div>
               </Link>
             </div>
-            <ul className={`${styles.navList} navItems`} >
+            </div>
+            <ul className={`${styles.navList} navItems`} onClick={() => setIsActive(false)} >
               <li>
                 <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")} >Home</NavLink>
               </li>
@@ -121,11 +128,7 @@ function NavBar() {
                 </>
               )}
 
-              <div className={styles.navToggler} onClick={() => navToggle()}>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
+             
             </div>
           </div>
         </div>

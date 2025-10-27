@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import Slider from "react-slick";
 import { DataContext } from "../../App";
 import ProductDetailsPopup from "../ProductDetailsPopup/ProductDetailsPopup";
@@ -11,10 +11,16 @@ function Featured() {
   const [detailsModal, showDetailsModal] = useState(false);
   const [previewItem, setPreviewItem] = useState();
 
+
+
+
   const handlePreview = (item) => {
     showDetailsModal(true);
     setPreviewItem(item);
   };
+
+
+
 
 
   var settings = {
@@ -22,46 +28,40 @@ function Featured() {
     infinite: false,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 4,
-    initialSlide: 0,
+    slidesToScroll: 1,
+    // initialSlide: 0,
     arrows: true,
     responsive: [
-      //     {
-      //   breakpoint: 1600,
-      //   settings: {
-      //     slidesToShow: 4,
-      //     slidesToScroll: 4,
-      //     infinite: true,
-      //     dots: true,
-      //   },
-      // },
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
+          // slidesToScroll: 3,
+          // infinite: true,
+          // dots: true,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          arrows: false,
-          slidesToScroll: 2,
-          initialSlide: 2,
+          // arrows: false,
+          // slidesToScroll: 2,
+          // initialSlide: 2,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 575,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
+          // slidesToScroll: 1,
         },
       },
     ],
   };
+
+
+
 
   return (
     <>

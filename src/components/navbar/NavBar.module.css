@@ -52,6 +52,10 @@
   padding: 15px;
   margin: 0;
 }
+.navList li{ 
+  padding-bottom: 8px
+  ;
+}
 .siteHeader.activeHeader .navList {
   left: 0;
 }

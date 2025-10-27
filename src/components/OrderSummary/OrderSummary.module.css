@@ -1,0 +1,32 @@
+.orderSummaryWrap {
+  background: var(--offwhite);
+}
+.summaryLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0 !important;
+  border-bottom: 1px solid var(--primary-color);
+  font-weight: 500;
+}
+.orderSummaryWrap h2{
+     margin-top: 20px;
+}
+@media (min-width: 768px) {
+  .orderSummaryWrap h2{
+     margin-top: 50px;
+}
+  .orderSummaryWrap{
+    height: 100vh;
+  }
+  .orderSummaryInside {
+        position: fixed;
+        width: -webkit-fill-available;
+        padding-right: 15px;
+  }
+}
+@media (min-width:1200px) {
+    .orderSummaryWrap h2{
+     margin-top: 90px;
+}
+}

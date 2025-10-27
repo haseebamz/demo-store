@@ -1,6 +1,6 @@
 .footerBrand{
     max-width: 90px;
-        margin-inline: auto;
+        /* margin-inline: auto; */
         display: block;
         margin-bottom: 10px;
 }
