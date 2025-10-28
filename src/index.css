@@ -248,6 +248,23 @@ a {
   width: 100%;
   transition: width 0.3s ease;
 }
+.featuredWrap .productCard  {
+  margin-inline: auto;
+}
+.swiper-navigation-icon path{
+
+fill: var(--white)
+}
+.swiper-navigation-icon{
+background-color: var(--primary-color);
+}
+.swiper-button-prev,
+.swiper-button-next{
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+      overflow: hidden;
+}
 @media (min-width: 768px) {
   h2 {
     font-size: 25px;
