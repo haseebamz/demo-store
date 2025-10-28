@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Categories from "../../category/categories";
+import Categories from "../../category/Categories";
 import Featured from "../../featured/Featured";
 import HeroBanner from "../../HeroBanner/HeroBanner";
 import { DataContext } from "../../../App";
