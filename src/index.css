@@ -182,7 +182,7 @@ a {
   max-width: fit-content;
   line-height: 15px;
   /* padding: 1px 4px 5px 4px; */
-  padding: 5px;
+  padding: 5px 6px;
   border-radius: 10px;
   max-height: fit-content;
   cursor: pointer;
