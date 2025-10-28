@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes, useLocation } from "react-router";
 import "./App.css";
-import NavBar from "./components/navbar/navBar";
+import NavBar from "./components/navbar/NavBar";
 import Cart from "./components/Pages/CartPage/Cart";
 import Home from "./components/Pages/Home/Home";
 import { createContext, useState, useEffect } from "react";
