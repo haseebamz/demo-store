@@ -306,6 +306,9 @@ background-color: var(--primary-color);
   }
 }
 @media (min-width: 1200px) {
+  .cartPlus {
+    padding: 3px 6px 5px 6px;
+  }
   .wrapper {
     padding-top: 64px;
   }
