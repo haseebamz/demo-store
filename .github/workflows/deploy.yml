@@ -41,7 +41,7 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           script: |
-            sudo rm -rf /var/www/haseebcode.online/*
-            sudo cp -r /home/ubuntu/deploy_temp/* /var/www/haseebcode.online/
+            sudo rm -rf /var/www/dev.haseebcode.online/*
+            sudo cp -r /home/ubuntu/deploy_temp/* /var/www/dev.haseebcode.online/
             sudo systemctl reload nginx
             echo "✅ Deployment successful!"
